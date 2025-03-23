@@ -16,3 +16,12 @@ while (count > 0){
 
     count--;
 }
+
+let squareDivs = document.querySelectorAll(".container div");
+console.log(squareDivs);
+
+squareDivs.forEach((div) => {
+    div.addEventListener("mouseover", () => {
+        div.style.backgroundColor = "#808080";
+    })
+});

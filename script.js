@@ -1,5 +1,5 @@
-const WIDTH = 900;
-const HEIGHT = 900;
+const WIDTH = 800;
+const HEIGHT = 800;
 
 let GRID_LENGTH = 16;
 let count = GRID_LENGTH ** 2;
@@ -11,7 +11,7 @@ while (count > 0){
     let grid_height = HEIGHT / GRID_LENGTH;
     let grid_width = WIDTH / GRID_LENGTH;
 
-    grid.style.cssText = `height: ${grid_height}px; width: ${grid_width}px; border: .1px dashed #EBECF0; box-sizing: border-box;`;
+    grid.style.cssText = `height: ${grid_height}px; width: ${grid_width}px; box-sizing: border-box;`;
     container.appendChild(grid);
 
     count--;

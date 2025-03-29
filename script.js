@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
         let grid_height = HEIGHT / GRID_LENGTH;
         let grid_width = WIDTH / GRID_LENGTH;
 
-        grid.style.cssText = `height: ${grid_height}px; width: ${grid_width}px; box-sizing: border-box;`;
+        grid.style.cssText = `height: ${grid_height}px; width: ${grid_width}px; box-sizing: border-box; border: .1px solid rgba(233, 233, 233, 0.19);`;
         container.appendChild(grid);
 
         count--;

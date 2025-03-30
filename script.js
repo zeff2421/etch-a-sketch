@@ -8,7 +8,10 @@ let container = document.querySelector(".container");
 let btn = document.querySelector("button");
 
 window.addEventListener("load", () => {
-    GRID_LENGTH = parseInt(prompt("Enter the number of squares per side: "));
+
+    do {
+        GRID_LENGTH = parseInt(prompt("Enter the number of squares per side: "));
+    } while (GRID_LENGTH > 100 || !Number.isInteger(GRID_LENGTH))
 
     let count = GRID_LENGTH ** 2;
 

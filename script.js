@@ -1,5 +1,5 @@
-const WIDTH = 800;
-const HEIGHT = 800;
+const WIDTH = 700;
+const HEIGHT = 700;
 
 let GRID_LENGTH;
 

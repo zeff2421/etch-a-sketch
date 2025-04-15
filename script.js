@@ -1,12 +1,14 @@
 const WIDTH = 700;
 const HEIGHT = 700;
 
+// Function to deallocate memory of nodes in container
 function removeContainerNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
 }
 
+// Creates a random color
 function getNewColor() {
     let symbols = "0123456789ABCDEF";
     let color = "#";
@@ -39,6 +41,7 @@ btn.addEventListener("click", () => {
         removeContainerNodes(container);
     }
 
+    // Creates squares to make up a grid
     while (count > 0){
         let grid = document.createElement("div");
         let grid_height = HEIGHT / GRID_LENGTH;
@@ -52,7 +55,7 @@ btn.addEventListener("click", () => {
 
     let squareDivs = document.querySelectorAll(".container div");
     console.log(squareDivs);
-
+    // Draw on the square hovered over
     squareDivs.forEach((div) => {
         div.addEventListener("mouseover", () => {
             if (checkbox.checked) {

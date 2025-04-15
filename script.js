@@ -7,11 +7,26 @@ function removeContainerNodes(parent) {
     }
 }
 
+function getNewColor() {
+    let symbols = "0123456789ABCDEF";
+    let color = "#";
+
+    for (let i = 0; i < 6; i++) {
+        color += symbols[Math.floor(Math.random() * 16)];
+    }
+
+    return color;
+}
+
 let GRID_LENGTH;
 
 
 let container = document.querySelector(".container");
 let btn = document.querySelector("button");
+
+let toggleButton = document.querySelector(".toggle-button");
+let circle = document.querySelector(".circle");
+let checkbox = document.getElementById("checkbox");
 
 btn.addEventListener("click", () => {
 
@@ -41,7 +56,23 @@ btn.addEventListener("click", () => {
 
     squareDivs.forEach((div) => {
         div.addEventListener("mouseover", () => {
-            div.style.backgroundColor = "#808080";
+            if (checkbox.checked) {
+                div.style.backgroundColor = getNewColor();
+            }
+            else
+                div.style.backgroundColor = "#808080";
         })
     });
 })
+
+toggleButton.onclick = function() {
+    if (checkbox.checked) {
+        circle.style.left = "100px";
+
+        toggleButton.style.background = "linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(255, 154, 0, 1) 10%, rgba(208, 222, 33, 1) 20%, rgba(79, 220, 74, 1) 30%, rgba(63, 218, 216, 1) 40%, rgba(47, 201, 226, 1) 50%, rgba(28, 127, 238, 1) 60%, rgba(95, 21, 242, 1) 70%, rgba(186, 12, 248, 1) 80%, rgba(251, 7, 217, 1) 90%, rgba(255, 0, 0, 1) 100%)";
+    }
+    else {
+        circle.style.left = "0px";
+        toggleButton.style.background = "#808080";
+    }
+}

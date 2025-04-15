@@ -1,19 +1,29 @@
 const WIDTH = 700;
 const HEIGHT = 700;
 
+function removeContainerNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
 let GRID_LENGTH;
 
 
 let container = document.querySelector(".container");
 let btn = document.querySelector("button");
 
-window.addEventListener("load", () => {
+btn.addEventListener("click", () => {
 
     do {
         GRID_LENGTH = parseInt(prompt("Enter the number of squares per side: "));
     } while (GRID_LENGTH > 100 || !Number.isInteger(GRID_LENGTH))
 
     let count = GRID_LENGTH ** 2;
+
+    if (container.hasChildNodes()) {
+        removeContainerNodes(container);
+    }
 
     while (count > 0){
         let grid = document.createElement("div");
@@ -34,8 +44,4 @@ window.addEventListener("load", () => {
             div.style.backgroundColor = "#808080";
         })
     });
-})
-
-btn.addEventListener("click", () => {
-    window.location.reload();
 })

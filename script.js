@@ -20,7 +20,6 @@ function getNewColor() {
 
 let GRID_LENGTH;
 
-
 let container = document.querySelector(".container");
 let btn = document.querySelector("button");
 

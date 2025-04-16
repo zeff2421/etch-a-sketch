@@ -10,6 +10,7 @@ function removeContainerNodes(parent) {
 
 // Creates a random color
 function getNewColor() {
+    // To get all combination of creating a hex code
     let symbols = "0123456789ABCDEF";
     let color = "#";
 
@@ -57,16 +58,21 @@ btn.addEventListener("click", () => {
     console.log(squareDivs);
     // Draw on the square hovered over
     squareDivs.forEach((div) => {
+        div.style.opacity = 0;
         div.addEventListener("mouseover", () => {
             if (checkbox.checked) {
+                div.style.opacity = 1;
                 div.style.backgroundColor = getNewColor();
             }
-            else
-                div.style.backgroundColor = "#808080";
+            else if (div.style.opacity < 1) {
+                div.style.opacity = parseFloat(div.style.opacity) + 0.1;
+                div.style.backgroundColor = "hsl(0, 0%, 0%)";
+            }   
         })
     });
 })
 
+// Toggle button to allow rainbow randomizing colors
 toggleButton.onclick = function() {
     if (checkbox.checked) {
         circle.style.left = "100px";

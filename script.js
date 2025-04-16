@@ -64,7 +64,7 @@ btn.addEventListener("click", () => {
                 div.style.opacity = 1;
                 div.style.backgroundColor = getNewColor();
             }
-            else if (div.style.opacity < 1) {
+            else if (div.style.opacity <= 1) {
                 div.style.opacity = parseFloat(div.style.opacity) + 0.1;
                 div.style.backgroundColor = "hsl(0, 0%, 0%)";
             }   

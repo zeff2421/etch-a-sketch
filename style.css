@@ -28,7 +28,7 @@ body {
 }
 
 .heading {
-    font-size: 85px;
+    font-size: 70px;
     text-align: center;
     margin-bottom: 50px;
 }
@@ -48,8 +48,8 @@ button {
 }
 
 .toggle-button {
-    width: 200px;
-    height: 100px;
+    width: 170px;
+    height: 70px;
     background-color: #808080;
     display: block;
     border-radius: 200px;
@@ -63,8 +63,8 @@ input[type="checkbox"] {
 
 .circle {
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     left: 0;
     background-color: #ffffff;
     border-radius: 200px;
